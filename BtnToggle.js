@@ -10,4 +10,3 @@ PrimeFactorsBtn.addEventListener("click", () => {
     PrimeFactorsBtn.classList.toggle("active")
     NumberDigitsBtn.classList.remove("active")
 })
-
