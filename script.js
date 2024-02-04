@@ -8,6 +8,15 @@ function DigitsOfNumber(number) {
     }
     return digitsArray
 }
+
+function SortInAscedingOrder(digitsArray) {
+   const sortedArray =  digitsArray.sort(function(a, b) {
+     return a - b
+   })
+   return sortedArray
+}
+
+
 const digitsContainer = document.querySelector(".container")
 const input = document.querySelector('input[type="text"]');
 const digitsOfNumber = document.createElement('div');
@@ -20,7 +29,7 @@ button.addEventListener('click', () => {
     input.value = "";
    } else {
         console.log(DigitsOfNumber(InputValue));
-        digitsOfNumber.innerText = DigitsOfNumber(InputValue);
+        digitsOfNumber.innerText = SortInAscedingOrder(DigitsOfNumber(InputValue));
         digitsContainer.appendChild(digitsOfNumber);
         input.value = "";
    }
