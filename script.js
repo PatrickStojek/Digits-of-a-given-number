@@ -9,4 +9,17 @@ function DigitsOfNumber(number) {
     return digitsArray
 }
 
-console.log(DigitsOfNumber(123));  
+const input = document.querySelector('input[type="text"]');
+
+const button = document.querySelector('.submit-button')
+button.addEventListener('click', () => {
+   const InputValue = parseFloat(input.value)
+
+   if(isNaN(InputValue)) {
+    alert("Please enter a valid Number")
+    input.value = "";
+   } else {
+    console.log(DigitsOfNumber(InputValue))
+   }
+
+})
