@@ -1,8 +1,10 @@
 body{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    font-family: sans-serif;
 }
 
 input, button{
@@ -14,4 +16,13 @@ button {
     cursor: pointer;
     border-radius: 10px;
     background-color: lightblue;
+}
+
+.container {
+    font-size: 5rem;
+    text-align: center;
+    font-weight: bolder;
+    color: #333;
+    width: 200px;
+    height: 100px;
 }

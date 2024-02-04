@@ -8,7 +8,7 @@ function DigitsOfNumber(number) {
     }
     return digitsArray
 }
-
+const digitsContainer = document.querySelector(".container")
 const input = document.querySelector('input[type="text"]');
 const digitsOfNumber = document.createElement('div');
 const button = document.querySelector('.submit-button')
@@ -21,7 +21,8 @@ button.addEventListener('click', () => {
    } else {
         console.log(DigitsOfNumber(InputValue));
         digitsOfNumber.innerText = DigitsOfNumber(InputValue);
-        document.body.appendChild(digitsOfNumber);
+        digitsContainer.appendChild(digitsOfNumber);
+        input.value = "";
    }
 
 })
