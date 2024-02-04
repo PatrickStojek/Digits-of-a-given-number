@@ -21,7 +21,7 @@ button.addEventListener('click', () => {
    } else {
         console.log(DigitsOfNumber(InputValue));
         digitsOfNumber.innerText = DigitsOfNumber(InputValue);
-        /* document.appendChild(digitsOfNumber); */
+        document.body.appendChild(digitsOfNumber);
    }
 
 })
