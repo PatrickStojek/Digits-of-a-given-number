@@ -10,16 +10,18 @@ function DigitsOfNumber(number) {
 }
 
 const input = document.querySelector('input[type="text"]');
-
+const digitsOfNumber = document.createElement('div');
 const button = document.querySelector('.submit-button')
 button.addEventListener('click', () => {
    const InputValue = parseFloat(input.value)
 
    if(isNaN(InputValue)) {
-    alert("Please enter a valid Number")
+    alert("Please enter a valid Number");
     input.value = "";
    } else {
-    console.log(DigitsOfNumber(InputValue))
+        console.log(DigitsOfNumber(InputValue));
+        digitsOfNumber.innerText = DigitsOfNumber(InputValue);
+        /* document.appendChild(digitsOfNumber); */
    }
 
 })
