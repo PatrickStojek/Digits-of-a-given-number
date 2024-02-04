@@ -25,3 +25,15 @@ button {
     color: #333;
     height: 100px;
 }
+
+.row {
+    flex-direction: row;
+}
+
+.toggle-btn {
+    background-color: lightgrey;
+}
+
+.active {
+    background-color: greenyellow;
+}
