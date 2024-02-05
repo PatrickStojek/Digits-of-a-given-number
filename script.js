@@ -24,19 +24,19 @@ const button = document.querySelector('.submit-button')
 
 
 function DigitsNumberToggleActive() {
+    const InputValue = parseFloat(input.value)
     digitsOfNumber.innerText = SortInAscedingOrder(DigitsOfNumber(InputValue));
         digitsContainer.appendChild(digitsOfNumber);
         input.value = "";
 }
 
 button.addEventListener('click', () => {
-   const InputValue = parseFloat(input.value)
-
+   
    if(isNaN(InputValue)) {
     alert("Please enter a valid Number");
     input.value = "";
    } else {
-        if(DigitsNumberToggle.classList.contains(".active")) {
+        if(DigitsNumberToggle.classList.contains("active")) {
             DigitsNumberToggleActive()
         }
         
