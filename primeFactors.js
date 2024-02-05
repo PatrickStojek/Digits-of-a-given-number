@@ -3,15 +3,25 @@ function PrimeFactors(number) {
     let divider =  2;
 
     while(number > 1) {
-        if(number % divider == 0) {
+        let isDividerAlreadyAdded = false;
+
+        for(let i = 0; i < PrimeFactors.length; i++) {
+            if(divider % PrimeFactors[i] === 0 ) {
+                isDividerAlreadyAdded = true;
+                break;
+            }
+        }
+        if(!isDividerAlreadyAdded) {
             PrimeFactors.push(divider)
+        }
+
+        if(number % divider === 0 ) {
             number = number / divider
         } else {
             divider++
         }
-        
     }
     return PrimeFactors
 }
 
-console.log(PrimeFactors(16))
+console.log(PrimeFactors(16))   
