@@ -23,21 +23,43 @@ const digitsOfNumber = document.createElement('div');
 const button = document.querySelector('.submit-button')
 
 
-function DigitsNumberToggleActive() {
-    const InputValue = parseFloat(input.value)
-    digitsOfNumber.innerText = SortInAscedingOrder(DigitsOfNumber(InputValue));
-        digitsContainer.appendChild(digitsOfNumber);
-        input.value = "";
-}
+
+function PrimeFactors(number) {
+    let PrimeFactors = [];
+    let divider =  2;
+
+    while(number > 1) {
+        if(number % divider == 0){
+            if(!PrimeFactors.includes(divider)) {
+                PrimeFactors.push(divider)
+            }
+            number = number / divider
+        } else {
+            divider++
+        }
+    }
+    return PrimeFactors
+ }
+
+ 
+
+
 
 button.addEventListener('click', () => {
-   
+    const InputValue = parseFloat(input.value)
    if(isNaN(InputValue)) {
     alert("Please enter a valid Number");
     input.value = "";
    } else {
         if(DigitsNumberToggle.classList.contains("active")) {
-            DigitsNumberToggleActive()
+            digitsOfNumber.innerText = SortInAscedingOrder(DigitsOfNumber(InputValue));
+            digitsContainer.appendChild(digitsOfNumber);
+            input.value = "";
+        } else {
+            digitsOfNumber.innerText = PrimeFactors(InputValue)
+            digitsContainer.appendChild(digitsOfNumber);
+            input.value = "";
+
         }
         
    }
