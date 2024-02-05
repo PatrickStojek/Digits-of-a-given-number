@@ -16,11 +16,19 @@ function SortInAscedingOrder(digitsArray) {
    return sortedArray
 }
 
-
+const DigitsNumberToggle = document.querySelector('.DigitsNumberToggle')
 const digitsContainer = document.querySelector(".container")
 const input = document.querySelector('input[type="text"]');
 const digitsOfNumber = document.createElement('div');
 const button = document.querySelector('.submit-button')
+
+
+function DigitsNumberToggleActive() {
+    digitsOfNumber.innerText = SortInAscedingOrder(DigitsOfNumber(InputValue));
+        digitsContainer.appendChild(digitsOfNumber);
+        input.value = "";
+}
+
 button.addEventListener('click', () => {
    const InputValue = parseFloat(input.value)
 
@@ -28,10 +36,10 @@ button.addEventListener('click', () => {
     alert("Please enter a valid Number");
     input.value = "";
    } else {
-        console.log(DigitsOfNumber(InputValue));
-        digitsOfNumber.innerText = SortInAscedingOrder(DigitsOfNumber(InputValue));
-        digitsContainer.appendChild(digitsOfNumber);
-        input.value = "";
+        if(DigitsNumberToggle.classList.contains(".active")) {
+            DigitsNumberToggleActive()
+        }
+        
    }
 
 })

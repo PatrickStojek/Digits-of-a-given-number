@@ -24,4 +24,4 @@ function PrimeFactors(number) {
     return PrimeFactors
 }
 
-console.log(PrimeFactors(16))   
+ 
